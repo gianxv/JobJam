@@ -1,0 +1,230 @@
+// Variables
+$red: #ad0000;
+
+// Placeholder selectors
+%transition {
+  transition: all .25s;
+}
+
+/*=Typography=*/
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open sans', sans-serif;
+  font-weight: 300;
+}
+
+.navbar a,
+.sec-about p {
+  text-align: center;
+}
+
+.navbar a {
+  font-size: 16px;
+}
+
+.navbar .fa-external-link {
+  font-size: 10px;
+}
+
+.main-heading {
+  font-family: 'Open sans', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 9px;
+  text-transform: uppercase;
+}
+
+.container > h1 {
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.sec-about a {
+  text-decoration: underline;
+}
+
+.sec-services h2,
+.sec-services p {
+  font-weight: 300;
+  text-align: center;
+}
+
+.sec-testimonials p {
+  font-style: italic;
+}
+
+.sec-contact .btn {
+  text-transform: uppercase;
+}
+
+.soc-media-ul a {
+  text-align: center;
+  text-decoration: none;
+}
+
+/*=Base=*/
+
+section {
+  padding: 5em 0;
+}
+
+footer {
+  padding: 3em 0;
+}
+
+form {
+  @media screen and (max-width: 768px) and (min-width: 485px) {
+    max-width: 70%;
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  @extend %transition;
+}
+
+hr {
+  margin-bottom: 3em;
+  width: 7%;
+}
+
+/*=Layout=*/
+
+.sec-folio .row {
+  margin-bottom: 3em;
+}
+
+.sec-folio img {
+  max-width: 100%;
+}
+
+/*Header*/
+
+.navbar-default {
+  background: #fff;
+}
+
+.navbar .fa-external-link {
+  vertical-align: top;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+  color: $red;
+}
+
+.navbar-default .navbar-nav>li>a:active {
+  color: darken($red, 5%);
+}
+
+/*Main*/
+
+.sec-main {
+  position: relative;
+  height: 560px;
+  background: url(https://img.cruisecritic.net/cms-sb/f/1005231/321d8a8620/hawaii_18325.jpg?auto=format&fit=crop&crop=entropy&q=25&w=2048&ixlib=react-9.8.1) no-repeat center center;
+  background-size: cover;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+  }
+}
+
+.main-heading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: 0;
+  margin: auto;
+  height: 40px;
+  color: #fff;
+}
+
+/*About*/
+
+.sec-about a {
+  color: #000;
+  &:hover,
+  &:focus {
+    color: $red;
+  }
+}
+/* Additionnal styles */
+	.video-slider {
+		width: 100%;
+		height: 20em;
+		background: #444;
+		position: relative;
+		overflow: hidden;
+	}
+	.slide {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		overflow: hidden;
+	}
+	.slide:first-child{
+		left: 0;
+	}
+	.video{
+		height: 100%;
+		width: 100%;
+		border:0;
+	}
+	.slide-arrow{
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 45%;
+		width: 15%;
+		cursor: pointer;
+		opacity: .2;
+	}
+	.slide-arrow:hover{
+		opacity: 1;
+	}
+	.slide-arrow:after{
+		content: "\003c";
+		text-align: center;
+		display: block;
+		height: 10%;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		font-size: 3em;
+	}
+	.slide-arrow.right:after{
+		content: "\003e";
+	}
+	.slide-arrow.right{
+		left: auto;
+		right: 0;
+	}
