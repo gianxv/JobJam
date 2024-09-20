@@ -51,3 +51,17 @@ function onYouTubeIframeAPIReady() {
         slide.video = new YT.Player(iframe);
     });
 }
+
+document.getElementById('search-form').addEventListener('submit', function(e) {
+    e.preventDefault();  // Prevent the form from submitting traditionally
+    const keyword = document.getElementById('keyword').value;
+    // Check if the user has a keyword, otherwise show an alert
+    if (!keyword) {
+        alert("Please enter a job keyword to search for!");
+        return;
+    }
+    // Construct Google search URL
+    let googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(keyword)}+jobs+near+me`;
+    // Redirect to Google search
+    window.location.href = googleSearchUrl;
+});
