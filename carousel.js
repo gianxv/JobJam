@@ -1,3 +1,4 @@
+// Videos
 $(document).ready(function () {
     var pos = 0,
         slides = $('.slide'),
@@ -51,17 +52,21 @@ function onYouTubeIframeAPIReady() {
         slide.video = new YT.Player(iframe);
     });
 }
+$(".email-signup").hide();
 
-document.getElementById('search-form').addEventListener('submit', function(e) {
-    e.preventDefault();  // Prevent the form from submitting traditionally
-    const keyword = document.getElementById('keyword').value;
-    // Check if the user has a keyword, otherwise show an alert
-    if (!keyword) {
-        alert("Please enter a job keyword to search for!");
-        return;
-    }
-    // Construct Google search URL
-    let googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(keyword)}+jobs+near+me`;
-    // Redirect to Google search
-    window.location.href = googleSearchUrl;
+$("#signup-box-link").click(function (event) {
+    event.preventDefault(); // Prevent page from jumping to the top
+    $(".email-login").fadeOut(100);
+    $(".email-signup").delay(100).fadeIn(100);
+    $("#login-box-link").removeClass("active");
+    $("#signup-box-link").addClass("active");
+});
+
+// Sign In or Sign Up
+$("#login-box-link").click(function (event) {
+    event.preventDefault(); // Prevent page from jumping to the top
+    $(".email-login").delay(100).fadeIn(100);
+    $(".email-signup").fadeOut(100);
+    $("#login-box-link").addClass("active");
+    $("#signup-box-link").removeClass("active");
 });
